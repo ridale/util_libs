@@ -46,7 +46,6 @@
 #error Read section CONFIG_SKIP_LOWLEVEL_INIT in README.
 #endif
 
-#define ROUND(a,b)          (((a) + (b) - 1) & ~((b) - 1))
 #define roundup(x, y)		((((x) + ((y) - 1)) / (y)) * (y))
 
 #define __ALIGN_MASK(x,mask)	(((x)+(mask))&~(mask))

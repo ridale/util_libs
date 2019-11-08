@@ -24,15 +24,15 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston,
  * MA 02111-1307 USA
  */
-#ifndef __COMMON_H_
-#define __COMMON_H_	1
+#pragma once
 
 #undef	_LINUX_CONFIG_H
 #define _LINUX_CONFIG_H 1	/* avoid reading Linux autoconf.h file	*/
 
+#include <utils/arith.h>
+
 #include "config.h"
 #include "../unimplemented.h"
-
 
 #ifdef CONFIG_POST
 #define CONFIG_HAS_POST
@@ -46,13 +46,10 @@
 #error Read section CONFIG_SKIP_LOWLEVEL_INIT in README.
 #endif
 
-
-#define ROUND(a,b)		(((a) + (b) - 1) & ~((b) - 1))
+#define ROUND(a,b)          (((a) + (b) - 1) & ~((b) - 1))
 #define roundup(x, y)		((((x) + ((y) - 1)) / (y)) * (y))
 
 #define __ALIGN_MASK(x,mask)	(((x)+(mask))&~(mask))
-
-
 
 #ifdef ETH_DEBUG
 #define _DEBUG	1
@@ -85,5 +82,3 @@
 	const typeof( ((type *)0)->member ) *__mptr = (ptr);	\
 	(type *)( (char *)__mptr - offsetof(type,member) );})
 
-
-#endif	/* __COMMON_H_ */

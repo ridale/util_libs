@@ -4,4 +4,4 @@
 
 #pragma once
 
-#include "zynq_zc70x.h"
+#include "mx8mq-evk.h"
